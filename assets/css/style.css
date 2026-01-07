@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* -------------------- Primary set-up --------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+
+/* -------------------- Colors --------------------*/
+
+:root {
+    /*Primary color*/
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey300: #C5C6CE;
+    --grey200: #D8D8D8;
+    --navy950: #00001A;
+    --navy600: #5E607A;
+
+     
+    /*Secondary color*/
+
+    --gold400: #E9AA52;
+    --red500: #F15D51;
+}
+
+
+/* -------------------- Typographie --------------------*/
+
+h1 {
+    font-size: 3rem;
+    line-height: 3.2rem;
+    font-weight: 600;
+}
+
+p, li {
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    color: var(--navy600);
+}
