@@ -105,6 +105,14 @@ nav {
 #desktop-menu li {
     display: inline-block;
     margin-left: 2.5rem;
+    margin-top: 3px;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 1rem;
+}
+
+#desktop-menu li:hover {
+    border-bottom: 3px solid var(--orange500);
+    padding-bottom: 1rem;
 }
 
 #desktop-menu li a {
@@ -116,6 +124,10 @@ nav {
     flex-direction: row;
     align-items: center;
     margin-left: auto;
+}
+
+.basket-account-wrapper img:first-child {
+    cursor: pointer;
 }
 
 hr {
@@ -149,6 +161,12 @@ section {
 .secondary-pictures img {
     width: calc((100% - 4.5rem) / 4);
     border-radius: 1rem;
+    cursor: pointer;
+    border: 3px solid var(--white);
+}
+
+.secondary-pictures img:hover {
+    border: 3px solid var(--orange500);
 }
 
 .slider-button {
@@ -269,6 +287,11 @@ section:nth-of-type(2) p:nth-of-type(2) {
     width: 66%;
     height: 3rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.cart:hover {
+    background-color: var(--orange300);
 }
  
 .cart svg {
