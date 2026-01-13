@@ -19,14 +19,15 @@
             <nav>
                 <!-- Mobile menu closed -->
                 <div id="mobile-menu-closed">
-                    <button aria-label="Open menu" aria-hidden="true" aria-expanded="false">
+                    <button aria-label="Open menu" aria-hidden="true" aria-expanded="false" tabindex="-1">
                         <img src="assets/images/icon-menu.svg" alt="">
                     </button>
                 </div>
 
-                <!-- <div id="mobile-menu-open">
+                <!-- Mobile menu open -->
+                <div id="mobile-menu-open">
                     <button aria-label="Close menu" aria-hidden="true" aria-expanded="true" tabindex="-1">
-                        <img src="assets/images/icon-menu-close.svg" alt="">
+                        <img src="assets/images/icon-close.svg" alt="">
                     </button>
                     <ul>
                         <li><a href="#">Collections</a></li>
@@ -34,12 +35,11 @@
                         <li><a href="#">Women</a></li>
                         <li><a href="#">About</a></li>
                     </ul>
-                </div> -->
+                </div>
                 
-                <!-- Logo -->
-                <img class="logo" src="assets/images/logo.svg" alt="">
                 <!-- Desktop menu -->
-                <div id="desktop-menu" aria-hidden="false"      >
+                <img class="logo" src="assets/images/logo.svg" alt="logo du site">
+                <div id="desktop-menu" aria-hidden="false" tabindex="0">
                     <ul>
                         <li><a href="#">Collections</a></li>
                         <li><a href="#">Men</a></li>
@@ -50,9 +50,9 @@
             </nav> 
             <div class="basket-account-wrapper">
                 <button class="card-button">
-                    <img src="assets/images/icon-cart.svg" alt="Card button">
+                    <img src="assets/images/icon-cart.svg" alt="card button">
                 </button>
-                <img class="avatar" src="assets/images/image-avatar.png" alt="Account image"> 
+                <img class="avatar" src="assets/images/image-avatar.png" alt="avatar image"> 
             </div>
         </div>
         <hr>
@@ -61,22 +61,22 @@
         <!-- Illustration section -->
         <section>
             <div class="main-image">
-                <img class="slider-button" src="assets/images/icon-previous.svg" alt="previous button">
+                <img class="slider-button" src="assets/images/icon-previous.svg" alt="previous button" >
                 <img class="slider-button" src="assets/images/icon-next.svg" alt="next button">
                 <img class="main-picture" src="assets/images/image-product-1.jpg" alt="Product">
             </div>
             <div class="secondary-pictures">
                 <button>
-                    <img src="assets/images/image-product-1-thumbnail.jpg" alt="Product 1 thumbnail">
+                    <img src="assets/images/image-product-1-thumbnail.jpg" alt="product 1 thumbnail" aria-label="button to enlarge photo 1">
                 </button>
                 <button>
-                    <img src="assets/images/image-product-2-thumbnail.jpg" alt="Product 2 thumbnail">
+                    <img src="assets/images/image-product-2-thumbnail.jpg" alt="product 2 thumbnail" aria-label="button to enlarge photo 2">>
                 </button>
                 <button>
-                    <img src="assets/images/image-product-3-thumbnail.jpg" alt="Product 3 thumbnail">
+                    <img src="assets/images/image-product-3-thumbnail.jpg" alt="product 3 thumbnail" aria-label="button to enlarge photo 3">>
                 </button>
                 <button>
-                    <img src="assets/images/image-product-4-thumbnail.jpg" alt="Product 4 thumbnail">
+                    <img src="assets/images/image-product-4-thumbnail.jpg" alt="product 4 thumbnail" aria-label="button to enlarge photo 4">>>
                 </button>                   
             </div>
         </section>
@@ -98,11 +98,11 @@
             <div class="order-line">
                 <!-- + / - button -->
                 <div class="plus-minus">
-                    <button class="minus-btn" aria-label="Decrease quantity">
+                    <button class="minus-btn" aria-label="decrease quantity">
                         <img src="assets/images/icon-minus.svg" alt="minus button">
                     </button>
                     <span class="quantity">0</span>
-                    <button class="plus-btn" aria-label="Increase quantity">
+                    <button class="plus-btn" aria-label="increase quantity">
                         <img src="assets/images/icon-plus.svg" alt="plus button">
                     </button>
                 </div>
