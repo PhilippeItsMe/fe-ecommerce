@@ -55,7 +55,7 @@ header, main {
 }
 
 main {
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     display: flex; 
     flex-direction: row;
 }
@@ -111,12 +111,18 @@ nav {
 }
 
 #desktop-menu li:hover {
-    border-bottom: 3px solid var(--orange500);
+    border-bottom: 2px solid var(--orange500);
     padding-bottom: 1rem;
 }
 
 #desktop-menu li a {
     text-decoration: none;
+}
+
+#desktop-menu li a:focus-visible {
+    outline: 3px solid var(--orange500);
+    outline-offset: 0.2rem;
+    border-radius: 0.2rem;
 }
 
 .basket-account-wrapper {
@@ -128,6 +134,17 @@ nav {
 
 .basket-account-wrapper img:first-child {
     cursor: pointer;
+}
+
+.card-button:focus-visible {
+    outline: 3px solid var(--orange500);
+    outline-offset: 0.2rem;
+     border-radius: 0.2rem;
+}
+
+.card-button {
+    border: none;
+    background-color: transparent           ;
 }
 
 hr {
@@ -158,8 +175,21 @@ section {
     margin-top: 1.5rem;
 }
 
-.secondary-pictures img {
+.secondary-pictures button {
+    border: none; 
+    background-color: transparent;
     width: calc((100% - 4.5rem) / 4);
+}
+
+.secondary-pictures button:focus-visible {
+    outline: 3px solid var(--orange500);
+    outline-offset: 0.1rem;
+    border-radius: 1rem;
+}
+
+.secondary-pictures img {
+    display: block;
+    width: 100%;
     border-radius: 1rem;
     cursor: pointer;
     border: 3px solid var(--white);
@@ -271,6 +301,12 @@ section:nth-of-type(2) p:nth-of-type(2) {
     cursor: pointer;
 }
 
+.plus-minus button:focus-visible {
+    outline: 2px solid var(--orange500);
+    outline-offset: 2px;
+    border-radius: 0.2rem;
+}
+
 .plus-minus span {
     color: var(--grey950);
     font-weight: 600;
@@ -293,6 +329,13 @@ section:nth-of-type(2) p:nth-of-type(2) {
 .cart:hover {
     background-color: var(--orange300);
 }
+
+.cart:focus-visible {
+    outline: 2px solid var(--orange500);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+} 
+
  
 .cart svg {
     margin-right: 1rem;

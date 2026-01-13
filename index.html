@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <header>
+    <header>        
         <div class="header-wrapper">
             <nav>
                 <!-- Mobile menu closed -->
                 <div id="mobile-menu-closed">
-                    <button aria-label="Open menu" aria-hidden="true" aria-expanded="false" tabindex="-1">
+                    <button aria-label="Open menu" aria-hidden="true" aria-expanded="false">
                         <img src="assets/images/icon-menu.svg" alt="">
                     </button>
                 </div>
@@ -39,7 +39,7 @@
                 <!-- Logo -->
                 <img class="logo" src="assets/images/logo.svg" alt="">
                 <!-- Desktop menu -->
-                <div id="desktop-menu" aria-hidden="false" tabindex="0">
+                <div id="desktop-menu" aria-hidden="false"      >
                     <ul>
                         <li><a href="#">Collections</a></li>
                         <li><a href="#">Men</a></li>
@@ -49,8 +49,10 @@
                 </div>
             </nav> 
             <div class="basket-account-wrapper">
-                <img src="assets/images/icon-cart.svg" alt="Card button">
-                <img class="avatar" src="assets/images/image-avatar.png" alt="Account button"> 
+                <button class="card-button">
+                    <img src="assets/images/icon-cart.svg" alt="Card button">
+                </button>
+                <img class="avatar" src="assets/images/image-avatar.png" alt="Account image"> 
             </div>
         </div>
         <hr>
@@ -64,10 +66,18 @@
                 <img class="main-picture" src="assets/images/image-product-1.jpg" alt="Product">
             </div>
             <div class="secondary-pictures">
-                <img src="assets/images/image-product-1-thumbnail.jpg" alt="Product 1 thumbnail">
-                <img src="assets/images/image-product-2-thumbnail.jpg" alt="Product 2 thumbnail">
-                <img src="assets/images/image-product-3-thumbnail.jpg" alt="Product 3 thumbnail">
-                <img src="assets/images/image-product-4-thumbnail.jpg" alt="Product 4 thumbnail">
+                <button>
+                    <img src="assets/images/image-product-1-thumbnail.jpg" alt="Product 1 thumbnail">
+                </button>
+                <button>
+                    <img src="assets/images/image-product-2-thumbnail.jpg" alt="Product 2 thumbnail">
+                </button>
+                <button>
+                    <img src="assets/images/image-product-3-thumbnail.jpg" alt="Product 3 thumbnail">
+                </button>
+                <button>
+                    <img src="assets/images/image-product-4-thumbnail.jpg" alt="Product 4 thumbnail">
+                </button>                   
             </div>
         </section>
          <!-- Description and order section -->
