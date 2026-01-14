@@ -77,10 +77,14 @@ nav {
 }
 
 /* Mobile menu closed */
+#mobile-menu-closed {
+    display: none;
+}
+
 #mobile-menu-closed button {
     border: none; 
     background-color: var(--white);
-    display: none;
+    cursor: pointer;
 }
 
 #mobile-menu-closed button img {
@@ -102,8 +106,8 @@ nav {
 #mobile-menu-open button {
     border: none; 
     background-color: transparent;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 #mobile-menu-open button img {
@@ -158,7 +162,11 @@ nav {
 .avatar{
     height: 4rem;
     padding-left: 3rem;
-} 
+}
+
+#desktop-menu {
+    display: initial;
+}
 
 #desktop-menu ul {
     display: flex;
@@ -420,13 +428,13 @@ section:nth-of-type(2) p:nth-of-type(2) {
 
 @media screen and (max-width: 900px) {
 
-    #mobile-menu-closed button {
+    /* #mobile-menu-closed button {
         display: initial;
     }
 
     #desktop-menu ul {
         display: none;
-    }
+    } */
 
     main {
     padding: 3rem 0rem;
