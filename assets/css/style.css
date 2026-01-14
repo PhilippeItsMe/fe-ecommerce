@@ -265,6 +265,7 @@ section {
     border-radius: 1rem;
     cursor: pointer;
     border: 3px solid transparent;
+    opacity: 1;
 }
 
 .secondary-pictures img:hover {
@@ -424,17 +425,66 @@ section:nth-of-type(2) p:nth-of-type(2) {
 }
 
 
+/* -------------------- Lightbox (slider) --------------------*/
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    width: 40%;
+    max-width: 500px;
+}
+
+.slider-button-lightbox {
+    background-color: var(--white);
+    border: none;
+    padding: 0.8rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.slider-button-lightbox:hover svg path {
+    stroke: var(--orange500);
+}
+
+.slider-button-lightbox:first-of-type {
+    position: absolute;
+    top: 45%;
+    left: -1.25rem;
+}
+
+.slider-button-lightbox:nth-of-type(2) {
+    position: absolute;
+    top: 45%;
+    right: 1.25rem;
+}
+
+.slider-button-lightbox svg {
+    width: 13px;
+    height: 18px;
+    display: block;
+}
+
+
 /* -------------------- Responsivness --------------------*/
 
 @media screen and (max-width: 900px) {
-
-    /* #mobile-menu-closed button {
-        display: initial;
-    }
-
-    #desktop-menu ul {
-        display: none;
-    } */
 
     main {
     padding: 3rem 0rem;
