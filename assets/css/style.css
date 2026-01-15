@@ -235,12 +235,12 @@ section {
 }
 
 .main-picture {
-    width: 90%;
+    width: 100%;
     border-radius: 1rem;
 }
 
 .secondary-pictures {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
@@ -441,8 +441,10 @@ section:nth-of-type(2) p:nth-of-type(2) {
 }
 
 .lightbox-content {
-    width: 40%;
+    width: 50%;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .slider-button-lightbox {
@@ -459,8 +461,14 @@ section:nth-of-type(2) p:nth-of-type(2) {
     opacity: 0.8;
 }
 
+
 .slider-button-lightbox:hover svg path {
     stroke: var(--orange500);
+}
+
+.slider-button-lightbox:focus-visible {
+    outline: 3px solid var(--orange500);
+    outline-offset: 2px; 
 }
 
 .slider-button-lightbox:first-of-type {
@@ -472,13 +480,36 @@ section:nth-of-type(2) p:nth-of-type(2) {
 .slider-button-lightbox:nth-of-type(2) {
     position: absolute;
     top: 45%;
-    right: 1.25rem;
+    right: -1.25rem;
 }
 
 .slider-button-lightbox svg {
     width: 13px;
     height: 18px;
     display: block;
+}
+
+.close-cross-btn {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    margin-bottom: 0.5rem;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.close-cross-btn:focus-visible {
+    outline: 3px solid var(--orange500);
+    outline-offset: 2px;
+    border-radius: 0.2rem; 
+}
+
+#close-cross {
+    opacity: 0.8;
+}
+
+#close-cross path:hover {
+    fill: var(--orange500);
 }
 
 

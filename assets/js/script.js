@@ -60,7 +60,7 @@ menuMobileOpenButton.addEventListener('click', (e) => {
 
 // ----------  Picture slider switch ---------- //
 
-//In the main
+//In the main | Desktop 
 secondaryPictures.addEventListener ('click', (e) => {
     const button = e.target.closest('button');
     const buttonImg = button.querySelector('img');
@@ -75,7 +75,7 @@ secondaryPictures.addEventListener ('click', (e) => {
 });
 
 
-//In the lightbox
+//In the lightbox through secondary pictures | Desktop only
 secondaryPicturesLightbox.addEventListener ('click', (e) => {
     const button = e.target.closest('button');
     const buttonImg = button.querySelector('img');
@@ -88,6 +88,10 @@ secondaryPicturesLightbox.addEventListener ('click', (e) => {
     buttonImg.style.opacity = '0.5';
     mainPictureLightbox.setAttribute('src', buttonImgScr);
 });
+
+//In the lightbox through next and previous buttons | Desktop only
+
+
 
 
 
