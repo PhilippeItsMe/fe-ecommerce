@@ -435,7 +435,7 @@ section:nth-of-type(2) p:nth-of-type(2) {
     width: 100vw;
     height: 100vh;
     z-index: 1000;
-    display: flex;
+    display: none; /*flex*/
     justify-content: center;
     align-items: center;
 }
@@ -460,7 +460,6 @@ section:nth-of-type(2) p:nth-of-type(2) {
     cursor: pointer;
     opacity: 0.8;
 }
-
 
 .slider-button-lightbox:hover svg path {
     stroke: var(--orange500);
