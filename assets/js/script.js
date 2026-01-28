@@ -8,6 +8,8 @@ const menuMobileOpen = document.querySelector('#mobile-menu-open');
 const menuMobileOpenButton = document.querySelector('#mobile-menu-open button');
 
 // Main Illustration const
+const header = document.querySelector('header');
+const main = document.querySelector('main');
 const mainPicture = document.querySelector('.main-picture');
 const secondaryPictures = document.querySelector('.secondary-pictures');
 const secondaryPicturesAllImg = document.querySelectorAll('.secondary-pictures img');
@@ -16,12 +18,18 @@ const nextButton = document.querySelectorAll('main .slider-button')[1];
 
 // Lightbox Illustration const
 const lightbox= document.querySelector('.lightbox');
+const closeCrossBtn = document.querySelector('.close-cross-btn');
+
 const mainPictureLightbox = document.querySelector('.lightbox-content .main-picture');
 const secondaryPicturesLightbox = document.querySelector('.lightbox-content .secondary-pictures');
-const secondaryPicturesAllImgLightbox = document.querySelectorAll('.lightbox-content .secondary-pictures img')
-const previousButtonLightbox = document.querySelector('#previous-button-lightbox')
-const nextButtonLightbox = document.querySelector('#next-button-lightbox')
+const secondaryPicturesAllImgLightbox = document.querySelectorAll('.lightbox-content .secondary-pictures img');
+const previousButtonLightbox = document.querySelector('#previous-button-lightbox');
+const nextButtonLightbox = document.querySelector('#next-button-lightbox');
 
+// Quantity 
+const minusBtn = document.querySelector('.minus-btn');
+const plusBtn = document.querySelector('.plus-btn');
+const quantity = document.querySelector('.quantity');
 
 
 // ----------  Switch desktop & mobile menu ---------- //
@@ -97,13 +105,39 @@ secondaryPicturesLightbox.addEventListener ('click', (e) => {
 
 //Turn on and off the lightbox
 
-mainPicture.addEventListener('click', () => {
-    ligthbox.style.display = 'flex';
+closeCrossBtn.addEventListener('click', () => {const header = document.querySelector('header')});
 
+mainPicture.addEventListener('click', () => {
+    if (!mediaQuery.matches) {
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
+        
+        // Block the header and the main
+        header.setAttribute('inert', '');
+        main.setAttribute('inert', '');
+        closeCrossBtn.focus();
+    }
+});
+
+closeCrossBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden', 'true');
+    
+    // Unblock the header and the main
+    header.removeAttribute('inert');
+    main.removeAttribute('inert');
+    lightbox.style.display = 'none';
+    header.setAttribute('aria-hidden', 'false');
+    main.setAttribute('aria-hidden', 'false');
 });
 
 
-
+mainPicture.addEventListener('click', () => {
+    if (!mediaQuery.matches) {
+        lightbox.style.display = 'flex';
+        main.setAttribute('aria-hidden', 'true');
+    }
+});
 
 
 //In the lightbox through next and previous buttons | Desktop only
@@ -137,5 +171,41 @@ nextButtonLightbox.addEventListener('click', () => {
     updateMainPicture();
 });
 
+
+//Next and previous buttons | Tablet and mobile only
+
+function updateMainPictureTabletMobile() {
+    mainPicture.setAttribute('src', sliderImages[currentIndex]);
+    
+    for (let i = 0; i < secondaryPicturesAllImg.length; i++) {
+        const img = secondaryPicturesAllImg[i];
+        const index = i;
+    }
+}
+
+previousButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+    updateMainPictureTabletMobile();
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % sliderImages.length;
+    updateMainPictureTabletMobile();
+});
+
+// ----------  Switch desktop & mobile menu ---------- //
+let quantityOrdered = 0;  
+
+plusBtn.addEventListener('click', () => {
+    quantityOrdered += 1;
+    quantity.textContent = quantityOrdered;
+});
+
+minusBtn.addEventListener('click', () => {
+    if (quantity.textContent !== '0') {
+        quantityOrdered -= 1;
+        quantity.textContent = quantityOrdered;
+    }
+}); 
 
 
