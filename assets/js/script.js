@@ -232,3 +232,6 @@ cartBtn.addEventListener('click', () => {
     avatar.style.border = '3px solid var(--orange500)';
     avatar.style.borderRadius = '2rem';
 });
+
+
+// ---------- Empty Cart ---------- //
