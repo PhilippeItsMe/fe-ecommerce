@@ -149,7 +149,7 @@ nav {
 }
 
 #mobile-menu-open li a:hover {
-    border-bottom: 2px solid var(--orange500);
+    border-bottom: 3px solid var(--orange500);
     padding-bottom: 0.5rem;
     cursor: pointer;
     outline: none;
@@ -169,7 +169,6 @@ nav {
 
 .avatar{
     height: 4rem;
-    padding-left: 3rem;
 }
 
 #desktop-menu {
@@ -210,22 +209,36 @@ nav {
     flex-direction: row;
     align-items: center;
     margin-left: auto;
+    gap: 2rem;
 }
 
 .basket-account-wrapper img:first-child {
     cursor: pointer;
 }
 
-.card-button:focus-visible {
-    outline: 3px solid var(--orange500);
-    outline-offset: 0.2rem;
-     border-radius: 0.2rem;
-}
-
-.card-button {
+.cart-button {
     border: none;
     background-color: transparent           ;
 }
+
+.cart-button:focus-visible {
+    outline: 3px solid var(--orange500);
+    outline-offset: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+.cart-quantity {
+    background-color: var(--orange500);
+    font-size: 0.8rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 0.3rem;
+    color: var(--white);
+    position: relative;
+    top: -1rem;
+    left: 2.5rem;
+    display: none;
+}
+
 
 hr {
     border: 1px solid var(--grey100);

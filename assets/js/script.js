@@ -1,35 +1,47 @@
 const mediaQuery = window.matchMedia('(max-width: 900px)');
 
-// Menu const
+// Menu
 const menuDesktop = document.querySelector('#desktop-menu');
 const menuMobileClosed = document.querySelector('#mobile-menu-closed');
-const menuMobileClosedButton = document.querySelector('#mobile-menu-closed button');
+const menuMobileClosedButton = document.querySelector(
+    '#mobile-menu-closed button');
 const menuMobileOpen = document.querySelector('#mobile-menu-open');
-const menuMobileOpenButton = document.querySelector('#mobile-menu-open button');
+const menuMobileOpenButton = document.querySelector(
+    '#mobile-menu-open button');
 
-// Main Illustration const
+// Main Slider
 const header = document.querySelector('header');
 const main = document.querySelector('main');
 const mainPicture = document.querySelector('.main-picture');
 const secondaryPictures = document.querySelector('.secondary-pictures');
-const secondaryPicturesAllImg = document.querySelectorAll('.secondary-pictures img');
+const secondaryPicturesAllImg = document.querySelectorAll(
+    '.secondary-pictures img');
 const previousButton = document.querySelectorAll('main .slider-button')[0];
 const nextButton = document.querySelectorAll('main .slider-button')[1];
 
-// Lightbox Illustration const
+// Lightbox 
 const lightbox= document.querySelector('.lightbox');
 const closeCrossBtn = document.querySelector('.close-cross-btn');
 
-const mainPictureLightbox = document.querySelector('.lightbox-content .main-picture');
-const secondaryPicturesLightbox = document.querySelector('.lightbox-content .secondary-pictures');
-const secondaryPicturesAllImgLightbox = document.querySelectorAll('.lightbox-content .secondary-pictures img');
-const previousButtonLightbox = document.querySelector('#previous-button-lightbox');
+const mainPictureLightbox = document.querySelector(
+    '.lightbox-content .main-picture');
+const secondaryPicturesLightbox = document.querySelector(
+    '.lightbox-content .secondary-pictures');
+const secondaryPicturesAllImgLightbox = document.querySelectorAll(
+    '.lightbox-content .secondary-pictures img');
+const previousButtonLightbox = document.querySelector(
+    '#previous-button-lightbox');
 const nextButtonLightbox = document.querySelector('#next-button-lightbox');
 
 // Quantity 
 const minusBtn = document.querySelector('.minus-btn');
 const plusBtn = document.querySelector('.plus-btn');
 const quantity = document.querySelector('.quantity');
+
+// Add to card
+const cartBtn= document.querySelector('.cart');
+const avatar= document.querySelector('.avatar');
+const cartQuantity= document.querySelector('.cart-quantity');
 
 
 // ----------  Switch desktop & mobile menu ---------- //
@@ -54,7 +66,7 @@ handelMenu(mediaQuery);
 mediaQuery.addEventListener('change', handelMenu);
 
 
-// ----------  Switch mobile menu closed and opened ---------- //
+// ----------  Menu mobile closed ] opened ---------- //
 
 menuMobileClosedButton.addEventListener('click', (e) => {
     menuMobileClosed.style.display = 'none';
@@ -72,7 +84,7 @@ menuMobileOpenButton.addEventListener('click', (e) => {
 });
 
 
-// ----------  Pictures slider ---------- //
+// ----------  Slider ---------- //
 
 //In the main | Desktop 
 secondaryPictures.addEventListener ('click', (e) => {
@@ -104,8 +116,8 @@ secondaryPicturesLightbox.addEventListener ('click', (e) => {
 });
 
 //Turn on and off the lightbox
-
-closeCrossBtn.addEventListener('click', () => {const header = document.querySelector('header')});
+closeCrossBtn.addEventListener('click', () => {
+    const header = document.querySelector('header')});
 
 mainPicture.addEventListener('click', () => {
     if (!mediaQuery.matches) {
@@ -141,7 +153,6 @@ mainPicture.addEventListener('click', () => {
 
 
 //In the lightbox through next and previous buttons | Desktop only
-
 const sliderImages = [
     'assets/images/image-product-1.jpg',
     'assets/images/image-product-2.jpg',
@@ -162,7 +173,8 @@ function updateMainPicture() {
 }
 
 previousButtonLightbox.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+    currentIndex = (
+        currentIndex - 1 + sliderImages.length) % sliderImages.length;
     updateMainPicture();
 });
 
@@ -173,7 +185,6 @@ nextButtonLightbox.addEventListener('click', () => {
 
 
 //Next and previous buttons | Tablet and mobile only
-
 function updateMainPictureTabletMobile() {
     mainPicture.setAttribute('src', sliderImages[currentIndex]);
     
@@ -184,7 +195,8 @@ function updateMainPictureTabletMobile() {
 }
 
 previousButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+    currentIndex = (
+        currentIndex - 1 + sliderImages.length) % sliderImages.length;
     updateMainPictureTabletMobile();
 });
 
@@ -193,7 +205,9 @@ nextButton.addEventListener('click', () => {
     updateMainPictureTabletMobile();
 });
 
-// ----------  Switch desktop & mobile menu ---------- //
+
+// ----------  Quantity ---------- //
+
 let quantityOrdered = 0;  
 
 plusBtn.addEventListener('click', () => {
@@ -206,6 +220,15 @@ minusBtn.addEventListener('click', () => {
         quantityOrdered -= 1;
         quantity.textContent = quantityOrdered;
     }
-}); 
+});
 
 
+// ----------  Add to cart ---------- //
+
+cartBtn.addEventListener('click', () => {
+    quantity.textContent = '0';
+    cartQuantity.style.display = 'initial';
+    cartQuantity.textContent = quantityOrdered;
+    avatar.style.border = '3px solid var(--orange500)';
+    avatar.style.borderRadius = '2rem';
+});
