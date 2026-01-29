@@ -38,10 +38,12 @@ const minusBtn = document.querySelector('.minus-btn');
 const plusBtn = document.querySelector('.plus-btn');
 const quantity = document.querySelector('.quantity');
 
-// Add to card
+// Add to cart
 const cartBtn= document.querySelector('.cart');
 const avatar= document.querySelector('.avatar');
 const cartQuantity= document.querySelector('.cart-quantity');
+
+
 
 
 // ----------  Switch desktop & mobile menu ---------- //
