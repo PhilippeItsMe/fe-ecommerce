@@ -39,11 +39,21 @@ const plusBtn = document.querySelector('.plus-btn');
 const quantity = document.querySelector('.quantity');
 
 // Add to cart
-const cartBtn= document.querySelector('.cart');
-const avatar= document.querySelector('.avatar');
-const cartQuantity= document.querySelector('.cart-quantity');
+const cartBtn = document.querySelector('.cart');
+const avatar = document.querySelector('.avatar');
+const cartQuantity = document.querySelector('.cart-quantity');
 
+// Cart
+const cartButton = document.querySelector('.cart-button');
+const cartContent = document.querySelector('.cart-content');
+const cartEmpty = document.querySelector('.empty-cart');
+const cartFull = document.querySelector('.full-cart');
 
+const quantityOrderedDisplay = document.querySelector(
+    '#quantity-ordered-display');
+const totalPriceOrderedDisplay = document.querySelector(
+    '#total-price-ordered-display');
+const carbage = document.querySelector('#carbage');
 
 
 // ----------  Switch desktop & mobile menu ---------- //
@@ -227,7 +237,28 @@ minusBtn.addEventListener('click', () => {
 
 // ----------  Add to cart ---------- //
 
+const UNIT_PRICE = 125;
+
+function updateCartSummary() {
+    if (!quantityOrderedDisplay || !totalPriceOrderedDisplay) {
+        return;
+    }
+
+    quantityOrderedDisplay.textContent = quantityOrdered;
+    totalPriceOrderedDisplay.textContent =
+        `$${(quantityOrdered * UNIT_PRICE).toFixed(2)}`;
+}
+
 cartBtn.addEventListener('click', () => {
+    if (quantityOrdered !== 0) {
+        cartEmpty.style.display = 'none';
+        cartFull.style.display = 'flex';
+        updateCartSummary();
+    } else {
+        cartEmpty.style.display = 'flex';
+        cartFull.style.display = 'none';
+    }
+
     quantity.textContent = '0';
     cartQuantity.style.display = 'initial';
     cartQuantity.textContent = quantityOrdered;
@@ -236,4 +267,32 @@ cartBtn.addEventListener('click', () => {
 });
 
 
-// ---------- Empty Cart ---------- //
+// ---------- Cart ---------- //
+
+cartButton.addEventListener('click', () => {
+    if (quantityOrdered !== 0) {
+        cartEmpty.style.display = 'none';
+        cartFull.style.display = 'flex';
+        updateCartSummary();
+    } else {
+        cartEmpty.style.display = 'flex';
+        cartFull.style.display = 'none';
+    }
+
+    const isHidden =
+        cartContent.style.display === 'none' ||
+        getComputedStyle(cartContent).display === 'none';
+
+    cartContent.style.display = isHidden ? 'flex' : 'none';
+});
+
+carbage.addEventListener('click', () => {
+    quantityOrdered = 0;
+    updateCartSummary();
+    cartQuantity.style.display = 'none';
+    cartQuantity.textContent = quantityOrdered;
+    avatar.style.border = 'none';
+});
+
+
+

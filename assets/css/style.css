@@ -255,7 +255,7 @@ hr {
     position: absolute;
     top: 7rem;
     right: 5rem;
-    display: flex;
+    display: none; /*flex*/
     flex-direction: column;
     justify-content: center;
 }
@@ -281,6 +281,8 @@ hr {
 /*Full*/
 
 .full-cart {
+    display: none;
+    flex-direction: column;
     margin: 0.8rem;
 }
 
@@ -567,6 +569,9 @@ section:nth-of-type(2) p:nth-of-type(2) {
     font-weight: 600;
     font-size: 1.05rem;
 }
+
+/* Cart */
+
 
 
 /* -------------------- Lightbox (slider) --------------------*/
